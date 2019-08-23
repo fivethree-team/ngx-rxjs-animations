@@ -1,0 +1,11 @@
+import { ElementRef } from '@angular/core';
+import { Observable } from 'rxjs';
+export declare const reverse: () => <T>(source: Observable<number>) => Observable<number>;
+export declare const before: (next: (v?: any) => void) => <T>(source: Observable<T>) => Observable<T>;
+export declare const beforeStyle: (target: ElementRef<any>, style: string, value: string) => <T>(source: Observable<T>) => Observable<T>;
+export declare const after: (next: (v?: any) => void) => <T>(source: Observable<T>) => Observable<T>;
+export declare const afterStyle: (target: ElementRef<any>, style: string, value: string) => <T>(source: Observable<T>) => Observable<T>;
+export declare const removeStyle: (el: ElementRef<any>, style: any) => <T>(source: Observable<T>) => Observable<T>;
+export declare const removeStyles: (el: ElementRef<any>, style: string[]) => <T>(source: Observable<number>) => Observable<number>;
+export declare const transform: (target: ElementRef<any>, ...ts: (<T>(number: any) => string)[]) => <T>(source: Observable<number>) => Observable<number>;
+export declare const fps: () => <T>(source: Observable<number>) => Observable<number>;

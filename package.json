@@ -8,7 +8,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build @fivethree/ngx-rxjs-animations",
+    "build:prod": "ng build @fivethree/ngx-rxjs-animations --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -16,7 +17,11 @@
     "init": "cd scripts && npm i && npm run build && node . init",
     "android": "node scripts run --platform android",
     "electron": "node scripts run --platform electron",
-    "ios": "node scripts run --platform ios"
+    "ios": "node scripts run --platform ios",
+    "gh-pages": "ng build @fivethree/ngx-rxjs-animations --prod && ng build --prod --base-href 'https://fivethree-team.github.io/ngx-rxjs-animations/' && npx ngh --dir=www",
+    "publish": "npm publish dist/fivethree/ngx-rxjs-animations",
+    "rocket": "npm run build:prod && cp README.md dist/fivethree/ngx-rxjs-animations && npm run publish",
+    "version": "conventional-changelog -p angular -i ./CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,10 @@
+import { ElementRef } from '@angular/core';
+import { Observable } from 'rxjs';
+export declare const morphStylePixels: (target: ElementRef<any>, fromEl: ElementRef<any>, style: string) => <T>(source: Observable<number>) => Observable<number>;
+export declare const morphBoxModel: (target: ElementRef<any>, fromEl: ElementRef<any>, style: any) => <T>(source: Observable<number>) => Observable<number>;
+export declare const morphPosition: (target: ElementRef<any>, fromEl: ElementRef<any>) => <T>(source: Observable<number>) => Observable<number>;
+export declare const morphBoxShadow: (target: ElementRef<any>, fromEl: ElementRef<any>) => <T>(source: Observable<number>) => Observable<number>;
+export declare const morphElement: (target: ElementRef<any>, fromEl: ElementRef<any>) => <T>(source: Observable<number>) => Observable<number>;
+export declare const morphColor: (target: ElementRef<any>, fromEl: ElementRef<any>, style?: string) => <T>(source: Observable<number>) => Observable<number>;
+export declare const morphText: (target: ElementRef<any>, fromEl: ElementRef<any>) => <T>(source: Observable<number>) => Observable<number>;
+export declare const morph: (target: ElementRef<any>, fromEl: ElementRef<any>) => <T>(source: Observable<number>) => Observable<number>;

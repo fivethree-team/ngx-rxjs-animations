@@ -1,0 +1,10 @@
+import { ElementRef } from '@angular/core';
+import { RectPosition } from './types';
+export declare function getPosition(el: ElementRef): RectPosition;
+export declare function setPosition(el: ElementRef, r: RectPosition): ElementRef;
+export declare function getStylePixels(el: ElementRef, style: string): number;
+export declare function setStyle(el: ElementRef, style: string, value: string): void;
+export declare function toRGB(c: number): string;
+export declare function rgbToHex(orig: any): any;
+export declare function parseRgb(orig: any): any[];
+export declare function getTweenedRgb(toColor: any, fromColor: any, t: number): any;

@@ -1,0 +1,41 @@
+{
+  "name": "@fivethree/ngx-rxjs-animations",
+  "version": "0.0.1",
+  "keywords": [
+    "angular",
+    "rxjs",
+    "animations",
+    "ngx",
+    "tween"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^8.1.2",
+    "@angular/core": "^8.1.2",
+    "rxjs": ">=6.4.0"
+  },
+  "author": "Fivethree Team",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Gary Großgarten",
+      "email": "gary@fivethree.io"
+    },
+    {
+      "name": "Marc Stammerjohann",
+      "email": "marc@fivethree.io"
+    }
+  ],
+  "main": "bundles/fivethree-ngx-rxjs-animations.umd.js",
+  "module": "fesm5/fivethree-ngx-rxjs-animations.js",
+  "es2015": "fesm2015/fivethree-ngx-rxjs-animations.js",
+  "esm5": "esm5/fivethree-ngx-rxjs-animations.js",
+  "esm2015": "esm2015/fivethree-ngx-rxjs-animations.js",
+  "fesm5": "fesm5/fivethree-ngx-rxjs-animations.js",
+  "fesm2015": "fesm2015/fivethree-ngx-rxjs-animations.js",
+  "typings": "fivethree-ngx-rxjs-animations.d.ts",
+  "metadata": "fivethree-ngx-rxjs-animations.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

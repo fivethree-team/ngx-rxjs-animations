@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="add()">
+        ADD
+      </ion-button>
+      <ion-button (click)="morph(0)">
+        morph
+      </ion-button>
+      <ion-button (click)="l = !l">
+        {{l ? 'HIDE' : 'SHOW'}}
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ng-container *ngIf="l">
+    <div class="card" [style.backgroundColor]="it.color" anim [anim.in]="reveal" [anim.out]="hide" [anim.stagger]="i"
+      [anim.stagger.delay]="85" *ngFor="let it of items; let i = index;" #item (click)="morph(i)">
+    </div>
+  </ng-container>
+
+</ion-content>

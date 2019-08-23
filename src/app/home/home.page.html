@@ -1,0 +1,34 @@
+<ion-header anim [anim.in]="slideDown" [anim.delay]="185">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/masonry']">
+        Masonry
+      </ion-button>
+      <ion-button [routerLink]="['/stagger']">
+        Stagger
+      </ion-button>
+      <ion-button>
+        <ion-icon slot="icon-only" name="logo-github"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="content" anim [anim.in]="colorTween">
+
+    <div>
+
+      <ion-button [disabled]="!currentSelection" color="primary" (click)="animate()" anim [anim.in]="reveal"
+        [anim.stagger.delay]="85" [anim.delay]="120" [anim.stagger]="0" #animateme size="large" fill="outline"
+        shape="round">
+        Animate Me
+      </ion-button>
+      <ion-select (ionChange)="animate(200)" [(ngModel)]="currentSelection" okText="SELECT" cancelText="CLOSE" padding
+        anim [anim.delay]="120" [anim.in]="reveal" [anim.stagger.delay]="85" [anim.stagger]="1"
+        placeholder="Select Animation">
+        <ion-select-option *ngFor="let item of animationSelection" [value]="item">{{item.name}}</ion-select-option>
+      </ion-select>
+    </div>
+
+  </div>
+</ion-content>

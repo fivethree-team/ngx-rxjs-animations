@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ngx-rxjs-animations</string>
+    <string name="title_activity_main">ngx-rxjs-animations</string>
+    <string name="package_name">de.fivethree.animations</string>
+    <string name="fileprovider_authority">de.fivethree.animations.fileprovider</string>
+    <string name="custom_url_scheme">de.fivethree.animations</string>
+</resources>

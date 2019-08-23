@@ -1,0 +1,7 @@
+{
+    "appId": "de.fivethree.animations",
+    "appName": "ngx-rxjs-animations",
+    "bundledWebRuntime": false,
+    "npmClient": "npm",
+    "webDir": "www"
+}

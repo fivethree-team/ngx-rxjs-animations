@@ -1,0 +1,28 @@
+{
+  "name": "@fivethree/ngx-rxjs-animations",
+  "version": "0.0.1",
+  "keywords": [
+    "angular",
+    "rxjs",
+    "animations",
+    "ngx",
+    "tween"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^8.1.2",
+    "@angular/core": "^8.1.2",
+    "rxjs": ">=6.4.0"
+  },
+  "author": "Fivethree Team",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Gary Großgarten",
+      "email": "gary@fivethree.io"
+    },
+    {
+      "name": "Marc Stammerjohann",
+      "email": "marc@fivethree.io"
+    }
+  ]
+}

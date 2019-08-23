@@ -1,0 +1,13 @@
+.morph {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: yellow;
+}
+
+ion-content {
+  --background: transparent;
+}

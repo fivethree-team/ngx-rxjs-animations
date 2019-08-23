@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Grid Layout Stagger</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col *ngFor="let item of items; let i = index;" size="3">
+        <div #card (click)="cardClicked(i)" class="card" [style.backgroundColor]="item.color" anim [anim.delay]="400" [anim.in]="in" [anim.out]="out" [anim.stagger]="i"
+          [anim.stagger.delay]="25">
+
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

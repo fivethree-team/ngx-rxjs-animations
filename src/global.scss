@@ -1,0 +1,39 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+body {
+  --ion-background-color: var(--ion-color-dark);
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: rgb(255, 255, 255);
+}
+
+.alert-radio-label.sc-ion-alert-md {
+  color: var(--ion-color-light);
+}
+
+[aria-checked='true'].sc-ion-alert-md .alert-radio-label.sc-ion-alert-md {
+  color: var(--ion-color-primary);
+}
+
+.alert-checkbox-group.sc-ion-alert-md,
+.alert-radio-group.sc-ion-alert-md {
+  border-bottom: 0px;
+  border-top: 0px;
+}
+
+.alert-head.sc-ion-alert-md {
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+.alert-wrapper.sc-ion-alert-md {
+  border-radius: 12px;
+}

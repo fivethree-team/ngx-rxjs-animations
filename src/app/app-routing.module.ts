@@ -11,10 +11,6 @@ const routes: Routes = [
     path: 'stagger',
     loadChildren: () =>
       import('./stagger/stagger.module').then(m => m.StaggerPageModule)
-  },
-  {
-    path: 'masonry',
-    loadChildren: './masonry/masonry.module#MasonryPageModule'
   }
 ];
 

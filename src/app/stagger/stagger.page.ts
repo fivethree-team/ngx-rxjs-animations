@@ -1,4 +1,3 @@
-import { afterStyle } from './../../../projects/fivethree/ngx-rxjs-animations/src/lib/operators/util.operators';
 import { MorphPage } from './../morph/morph.page';
 import {
   Component,
@@ -15,28 +14,24 @@ import {
   slideInLeft,
   slideOutRight,
   getPosition,
-  FivOverlay,
   toRGB,
-  getStylePixels,
   tween,
-  easeInOutSine,
-  fps,
   morph,
   after,
   reverse,
   easeOutSine,
   toPixels,
-  toBoxModel,
   fromToPixels,
   beforeStyle,
   easeInSine,
-  FivOverlayService,
   before,
-  setStyle
+  setStyle,
+  afterStyle
 } from '@fivethree/ngx-rxjs-animations';
 import { concat, zip } from 'rxjs';
 import { reveal, showButton } from '../animations';
 import { tap, flatMap } from 'rxjs/operators';
+import { FivOverlayService, FivOverlay } from '@fivethree/core';
 
 export interface Item {
   color: string;
@@ -71,7 +66,7 @@ export class StaggerPage implements OnInit {
   ngOnInit() {}
 
   startMorph(i, it) {
-    this.overlay.show(null, { index: i, item: it });
+    // this.overlay.show();
   }
 
   close() {
@@ -129,24 +124,5 @@ export class StaggerPage implements OnInit {
     this.items.unshift({
       color: toRGB(Math.random() * 16777215)
     });
-  }
-
-  morph(from: number) {
-    const fromItem = this.cards.toArray()[from];
-    const color = this.items[from].color;
-
-    const morphAnim = (target, from) =>
-      tween(easeOutSine, 240).pipe(
-        morph(target, from),
-        afterStyle(target, 'background-color', color)
-      );
-
-    this.oS
-      .morph(MorphPage)
-      .pipe(
-        before(page => setStyle(page.content, 'background-color', color)),
-        flatMap(page => morphAnim(page.content, fromItem))
-      )
-      .subscribe();
   }
 }

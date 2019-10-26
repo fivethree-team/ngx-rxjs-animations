@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { StaggerPage } from './stagger.page';
 import { AnimationsModule } from '@fivethree/ngx-rxjs-animations';
+import { FivOverlayModule } from 'dist/fivethree/ngx-rxjs-animations/public-api';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     AnimationsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FivOverlayModule
   ],
   declarations: [StaggerPage, MorphPage],
   entryComponents: [MorphPage]

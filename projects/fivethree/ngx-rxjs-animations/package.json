@@ -1,6 +1,6 @@
 {
   "name": "@fivethree/ngx-rxjs-animations",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [
     "angular",
     "rxjs",
@@ -9,8 +9,8 @@
     "tween"
   ],
   "peerDependencies": {
-    "@angular/common": "^8.1.2",
-    "@angular/core": "^8.1.2",
+    "@angular/common": ">=7.2.1 <9.0.0",
+    "@angular/core": ">=7.2.1 <9.0.0",
     "rxjs": ">=6.4.0"
   },
   "author": "Fivethree Team",

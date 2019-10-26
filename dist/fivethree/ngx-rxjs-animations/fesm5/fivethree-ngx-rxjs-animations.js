@@ -1,9 +1,8 @@
-import { Observable, of, Subject, merge } from 'rxjs';
+import { Observable, of, merge } from 'rxjs';
 import { map, first, tap, last, delay, flatMap } from 'rxjs/operators';
 import { __spread, __read } from 'tslib';
-import { Directive, ElementRef, Input, TemplateRef, Injectable, ComponentFactoryResolver, RendererFactory2, ApplicationRef, Injector, ɵɵdefineInjectable, ɵɵinject, INJECTOR, Component, ViewChild, Output, EventEmitter, HostBinding, NgModule } from '@angular/core';
+import { Directive, ElementRef, Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * @fileoverview added by tsickle
@@ -1128,252 +1127,14 @@ var AnimateDirective = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var FivOverlayService = /** @class */ (function () {
-    function FivOverlayService(componentFactoryResolver, rendererFactory, appRef, injector) {
-        this.componentFactoryResolver = componentFactoryResolver;
-        this.appRef = appRef;
-        this.injector = injector;
-        this.renderer = rendererFactory.createRenderer(null, null);
-    }
-    /**
-     * @template T
-     * @param {?} component
-     * @param {?=} content
-     * @return {?}
-     */
-    FivOverlayService.prototype.morph = /**
-     * @template T
-     * @param {?} component
-     * @param {?=} content
-     * @return {?}
-     */
-    function (component, content) {
-        /** @type {?} */
-        var resolvedContent = this.resolveNgContent(content);
-        /** @type {?} */
-        var componentRef = this.componentFactoryResolver
-            .resolveComponentFactory(component)
-            .create(this.injector, resolvedContent);
-        this.appRef.attachView(componentRef.hostView);
-        /** @type {?} */
-        var domElem = (/** @type {?} */ (((/** @type {?} */ (componentRef.hostView)))
-            .rootNodes[0]));
-        domElem.style.opacity = '0';
-        document.body.appendChild(domElem);
-        /** @type {?} */
-        var s = new Subject();
-        setTimeout((/**
-         * @return {?}
-         */
-        function () {
-            s.next(componentRef.instance);
-            domElem.style.opacity = '1';
-        }), 0);
-        return s.asObservable();
-    };
-    /**
-     * @private
-     * @template T
-     * @param {?} content
-     * @return {?}
-     */
-    FivOverlayService.prototype.resolveNgContent = /**
-     * @private
-     * @template T
-     * @param {?} content
-     * @return {?}
-     */
-    function (content) {
-        if (!content) {
-            return;
-        }
-        if (typeof content === 'string') {
-            /** @type {?} */
-            var element = this.renderer.createText(content);
-            return [[element]];
-        }
-        if (content instanceof TemplateRef) {
-            /** @type {?} */
-            var viewRef = content.createEmbeddedView(null);
-            return [viewRef.rootNodes];
-        }
-        /** @type {?} */
-        var factory = this.componentFactoryResolver.resolveComponentFactory(content);
-        /** @type {?} */
-        var componentRef = factory.create(this.injector);
-        return [[componentRef.location.nativeElement]];
-    };
-    FivOverlayService.decorators = [
-        { type: Injectable, args: [{
-                    providedIn: 'root'
-                },] }
-    ];
-    /** @nocollapse */
-    FivOverlayService.ctorParameters = function () { return [
-        { type: ComponentFactoryResolver },
-        { type: RendererFactory2 },
-        { type: ApplicationRef },
-        { type: Injector }
-    ]; };
-    /** @nocollapse */ FivOverlayService.ngInjectableDef = ɵɵdefineInjectable({ factory: function FivOverlayService_Factory() { return new FivOverlayService(ɵɵinject(ComponentFactoryResolver), ɵɵinject(RendererFactory2), ɵɵinject(ApplicationRef), ɵɵinject(INJECTOR)); }, token: FivOverlayService, providedIn: "root" });
-    return FivOverlayService;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var FivOverlay = /** @class */ (function () {
-    function FivOverlay(overlay) {
-        this.overlay = overlay;
-        this.afterInit = new EventEmitter();
-        this._open = false;
-    }
-    /**
-     * @param {?=} priority
-     * @param {?=} data
-     * @return {?}
-     */
-    FivOverlay.prototype.show = /**
-     * @param {?=} priority
-     * @param {?=} data
-     * @return {?}
-     */
-    function (priority, data) {
-        var _this = this;
-        if (!this.componentRef) {
-            // this.componentRef = this.overlay.createOverlay(
-            //   FivOverlayContent,
-            //   this.ngContent
-            // );
-            this._open = true;
-            this.componentRef.instance.priority = priority;
-            setTimeout((/**
-             * @return {?}
-             */
-            function () {
-                _this.afterInit.emit(data);
-            }), 0);
-            return this.componentRef.instance;
-        }
-    };
-    /**
-     * @return {?}
-     */
-    FivOverlay.prototype.hide = /**
-     * @return {?}
-     */
-    function () {
-        if (this.componentRef) {
-            this.componentRef.destroy();
-            this.componentRef = null;
-            this._open = false;
-        }
-    };
-    Object.defineProperty(FivOverlay.prototype, "open", {
-        get: /**
-         * @return {?}
-         */
-        function () {
-            return this._open;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    FivOverlay.decorators = [
-        { type: Component, args: [{
-                    selector: 'fiv-overlay',
-                    template: "<ng-template #content>\n  <ng-content></ng-content>\n</ng-template>",
-                    styles: [""]
-                }] }
-    ];
-    /** @nocollapse */
-    FivOverlay.ctorParameters = function () { return [
-        { type: FivOverlayService }
-    ]; };
-    FivOverlay.propDecorators = {
-        ngContent: [{ type: ViewChild, args: ['content', { static: false },] }],
-        priority: [{ type: Input }],
-        afterInit: [{ type: Output }]
-    };
-    return FivOverlay;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var FivOverlayContent = /** @class */ (function () {
-    function FivOverlayContent(sanitizer) {
-        this.sanitizer = sanitizer;
-    }
-    Object.defineProperty(FivOverlayContent.prototype, "myStyle", {
-        get: /**
-         * @return {?}
-         */
-        function () {
-            return this.priority
-                ? this.sanitizer.bypassSecurityTrustStyle("z-index: " + this.priority)
-                : null;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * @return {?}
-     */
-    FivOverlayContent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () { };
-    FivOverlayContent.decorators = [
-        { type: Component, args: [{
-                    selector: 'fiv-overlay-content',
-                    template: "<ng-content #content></ng-content>",
-                    styles: [""]
-                }] }
-    ];
-    /** @nocollapse */
-    FivOverlayContent.ctorParameters = function () { return [
-        { type: DomSanitizer }
-    ]; };
-    FivOverlayContent.propDecorators = {
-        myStyle: [{ type: HostBinding, args: ['style',] }]
-    };
-    return FivOverlayContent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var FivOverlayModule = /** @class */ (function () {
-    function FivOverlayModule() {
-    }
-    FivOverlayModule.decorators = [
-        { type: NgModule, args: [{
-                    declarations: [FivOverlay, FivOverlayContent],
-                    imports: [CommonModule],
-                    exports: [FivOverlay, FivOverlayContent],
-                    entryComponents: [FivOverlayContent],
-                    providers: [FivOverlayService]
-                },] }
-    ];
-    return FivOverlayModule;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 var AnimationsModule = /** @class */ (function () {
     function AnimationsModule() {
     }
     AnimationsModule.decorators = [
         { type: NgModule, args: [{
                     declarations: [AnimateDirective],
-                    imports: [CommonModule, FivOverlayModule],
-                    exports: [AnimateDirective, FivOverlayModule],
+                    imports: [CommonModule],
+                    exports: [AnimateDirective],
                     providers: []
                 },] }
     ];
@@ -2116,5 +1877,5 @@ function (targets, animation, d) {
     }))));
 });
 
-export { AnimateDirective, AnimationsModule, FivOverlay, FivOverlayModule, FivOverlayService, after, afterStyle, before, beforeStyle, easeInBack, easeInBounce, easeInCirc, easeInCubic, easeInElastic, easeInExpo, easeInOutBack, easeInOutBounce, easeInOutCirc, easeInOutCubic, easeInOutElastic, easeInOutExpo, easeInOutQuad, easeInOutQuart, easeInOutQuint, easeInOutSine, easeInQuad, easeInQuart, easeInQuint, easeInSine, easeOutBack, easeOutBounce, easeOutCirc, easeOutCubic, easeOutElastic, easeOutExpo, easeOutQuad, easeOutQuart, easeOutQuint, easeOutSine, fadeIn, fadeOut, fps, fromTo, fromToBoxModel, fromToColor, fromToPixels, fromToPosition, getPosition, getStylePixels, getTweenedRgb, linear, morph, morphBoxModel, morphBoxShadow, morphColor, morphElement, morphPosition, morphStylePixels, morphText, parseRgb, removeStyle, removeStyles, reverse, rgbToHex, scale, scaleX, scaleY, scaleYOut, setPosition, setStyle, slideInDown, slideInLeft, slideInRight, slideInUp, slideOutDown, slideOutLeft, slideOutRight, slideOutUp, stagger, toBoxModel, toBoxShadow, toMargin, toPadding, toPixels, toPosition, toRGB, transform, transformF, translateX, translateY, translateZ, tween, FivOverlayContent as ɵa };
+export { AnimateDirective, AnimationsModule, after, afterStyle, before, beforeStyle, easeInBack, easeInBounce, easeInCirc, easeInCubic, easeInElastic, easeInExpo, easeInOutBack, easeInOutBounce, easeInOutCirc, easeInOutCubic, easeInOutElastic, easeInOutExpo, easeInOutQuad, easeInOutQuart, easeInOutQuint, easeInOutSine, easeInQuad, easeInQuart, easeInQuint, easeInSine, easeOutBack, easeOutBounce, easeOutCirc, easeOutCubic, easeOutElastic, easeOutExpo, easeOutQuad, easeOutQuart, easeOutQuint, easeOutSine, fadeIn, fadeOut, fps, fromTo, fromToBoxModel, fromToColor, fromToPixels, fromToPosition, getPosition, getStylePixels, getTweenedRgb, linear, morph, morphBoxModel, morphBoxShadow, morphColor, morphElement, morphPosition, morphStylePixels, morphText, parseRgb, removeStyle, removeStyles, reverse, rgbToHex, scale, scaleX, scaleY, scaleYOut, setPosition, setStyle, slideInDown, slideInLeft, slideInRight, slideInUp, slideOutDown, slideOutLeft, slideOutRight, slideOutUp, stagger, toBoxModel, toBoxShadow, toMargin, toPadding, toPixels, toPosition, toRGB, transform, transformF, translateX, translateY, translateZ, tween };
 //# sourceMappingURL=fivethree-ngx-rxjs-animations.js.map

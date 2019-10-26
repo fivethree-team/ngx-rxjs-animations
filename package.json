@@ -1,6 +1,6 @@
 {
   "name": "@fivethree/ngx-rxjs-animations",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Fivethree Team",
   "homepage": "https://fivethree.io/",
   "description": "Ionic 4 starter",
@@ -38,7 +38,7 @@
     "@capacitor/cli": "1.1.1",
     "@capacitor/core": "1.1.1",
     "@capacitor/ios": "^1.1.1",
-    "@fivethree/core": "~0.8.25",
+    "@fivethree/core": "~0.9.6",
     "@fivethree/ngxs-ionic-router-plugin": "0.1.0",
     "@fivethree/ngxs-notification-plugin": "0.2.1",
     "@ionic-native/core": "^5.10.0",

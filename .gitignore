@@ -29,6 +29,7 @@ plugins/ios.json
 $RECYCLE.BIN/
 electron/*
 screenshots/
+dist/
 
 .DS_Store
 Thumbs.db

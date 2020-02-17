@@ -1,9 +1,0 @@
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-/**
- * Generated bundle index. Do not edit.
- */
-export { slideOutDown, slideOutUp, slideOutLeft, slideOutRight, slideInDown, slideInUp, slideInLeft, slideInRight, fadeIn, fadeOut, scaleYOut, AnimateDirective, AnimationsModule, linear, easeInQuad, easeOutQuad, easeInOutQuad, easeInCubic, easeOutCubic, easeInOutCubic, easeInQuart, easeOutQuart, easeInOutQuart, easeInQuint, easeOutQuint, easeInOutQuint, easeInSine, easeOutSine, easeInOutSine, easeInExpo, easeOutExpo, easeInOutExpo, easeInCirc, easeOutCirc, easeInOutCirc, easeInElastic, easeOutElastic, easeInOutElastic, easeInBack, easeOutBack, easeInOutBack, easeInBounce, easeOutBounce, easeInOutBounce, fromTo, fromToPixels, toPixels, toBoxModel, fromToBoxModel, toPadding, toMargin, fromToPosition, toPosition, toBoxShadow, fromToColor, reverse, before, beforeStyle, after, afterStyle, removeStyle, removeStyles, transform, fps, morphStylePixels, morphBoxModel, morphPosition, morphBoxShadow, morphElement, morphColor, morphText, morph, stagger, transformF, translateY, translateX, translateZ, scale, scaleX, scaleY, tween, getPosition, setPosition, getStylePixels, setStyle, toRGB, rgbToHex, parseRgb, getTweenedRgb } from './public-api';
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZml2ZXRocmVlLW5neC1yeGpzLWFuaW1hdGlvbnMuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9AZml2ZXRocmVlL25neC1yeGpzLWFuaW1hdGlvbnMvIiwic291cmNlcyI6WyJmaXZldGhyZWUtbmd4LXJ4anMtYW5pbWF0aW9ucy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBSUEsNm1DQUFjLGNBQWMsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogR2VuZXJhdGVkIGJ1bmRsZSBpbmRleC4gRG8gbm90IGVkaXQuXG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9wdWJsaWMtYXBpJztcbiJdfQ==
